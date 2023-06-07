@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textRegistration: {
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
     color: "#fff",
   },
   text: {
-    fontWeight: 500,
+    // fontWeight: 500,
     fontSize: 30,
     lineHeight: 35,
     marginTop: 35,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   signIn: {
     color: "#1B4371",
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     marginLeft: "auto",
     marginRight: "auto",
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   textShow: {
     width: 72,
     height: 19,
-    fontWeight: 400,
+    // fontWeight: 400,
     fontSize: 16,
     color: "#1B4371",
     marginTop: -53,

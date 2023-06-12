@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import styles from "./loginStyle";
-import { Text, View, TextInput, TouchableOpacity } from "react-native";
+import containerStyle from '../Screens/containerStyle'
+import {  
+  View,
+  ImageBackground,
+  TouchableWithoutFeedback,
+  Keyboard,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  TextInput,
+  Text, } from "react-native";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const inputEmail = (text) => setEmail(text);
@@ -10,10 +19,21 @@ export default function Login() {
   const infoLogin = () => {
     console.log("Email", email);
     console.log("Password", password);
+    navigation.navigate("PostScreen")
   };
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <View style={containerStyle.container}>
+      <ImageBackground
+        source={require("../BG.png")}
+        style={containerStyle.background}
+      >
+        <KeyboardAvoidingView
+          behavior={Platform.OS == "ios" ? "padding" : 250}
+        >
     <View style={styles.container}>
-      <Text style={styles.text}>Увійти</Text>
+
+      <Text style={styles.text} >Увійти</Text>
       <View
         style={{
           justifyContent: "center",
@@ -43,9 +63,13 @@ export default function Login() {
       >
         <Text style={styles.textRegistration}>Увійти</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity  onPress={() => navigation.navigate("Registration")}>
         <Text style={styles.signIn}>Немає акаунту? Зареєструватися</Text>
       </TouchableOpacity>
     </View>
+    </KeyboardAvoidingView>
+          </ImageBackground>
+        </View>
+      </TouchableWithoutFeedback>
   );
 }

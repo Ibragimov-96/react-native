@@ -1,6 +1,8 @@
 import * as Font from "expo-font";
-import Registration from "./Screens/RegistrationScreen";
-// import Login from "./Screens/LoginScreen";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import useRoute from "./Screens/route";
 import {
   StyleSheet,
   View,
@@ -12,34 +14,13 @@ import {
   Text,
 } from "react-native";
 
+const MainStack = createStackNavigator();
 export default function App() {
+  const route = useRoute(true)
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={styles.container}>
-        <ImageBackground source={require("./BG.png")} style={styles.background}>
-        <KeyboardAvoidingView  behavior={Platform.OS == "ios" ? "padding" : 250}>
-          <Registration />
-          {/* <Login/> */}
-          </KeyboardAvoidingView>
-        </ImageBackground>
-      </View>
-    </TouchableWithoutFeedback>
+    <NavigationContainer>
+             {route}  
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "flex-end",
-  },
-  background: {
-    flex:1,
-    resizeMode:'cover',
-    justifyContent:'center',
-    width: "100%",
-    
- 
-  },
-});

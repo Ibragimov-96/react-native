@@ -1,0 +1,64 @@
+import { StyleSheet } from "react-native";
+const styles = StyleSheet.create({
+  container: {
+  width:"100%",
+  height:"100%",
+    backgroundColor: "#fff",
+  },
+  header:{
+width:"100%",
+height:88,
+borderWidth:1,
+padding:0,
+
+borderBottomColor:"#BDBDBD",
+  },
+  text:{
+marginTop:41,
+  marginLeft:"auto",
+  marginRight:"auto",
+    fontSize: 17,
+    lineHeight: 25,
+    color:"#212121"
+  },
+  content:{
+    marginLeft:"auto",
+    marginRight:"auto",
+    marginTop:32
+  },
+  image:{
+    width:343,
+    height:240,
+    borderRadius:8,
+    backgroundColor:"#F6F6F6"
+  },
+  containerComent:{
+    marginTop:32,
+    gap: 16,
+    width:343,
+
+  },
+  input:{
+    width:343,
+    height:50,
+    borderColor:"#E8E8E8",
+   
+    paddingLeft:16,
+    backgroundColor:"#F6F6F6",
+  borderWidth:1,
+  borderRadius:100,
+  justifyContent:'center',
+  alignItems:"flex-start",
+marginTop:180
+  },
+  btn:{
+    width:343,
+    height:51,
+    backgroundColor:"#F6F6F6",
+    borderRadius:100,
+    justifyContent:"center",
+    alignItems:'center',
+    marginTop:32
+  }
+});
+export default styles;
